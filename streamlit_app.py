@@ -3,8 +3,12 @@ from openai import OpenAI
 
 st.title("Hi there!")
 
+# Open the .env file, and read in the api key into a variable
+with open(".env", "r") as file:
+    open_ai_api_key = file.read()
+
 client = OpenAI(
-    api_key = ""
+    api_key = open_ai_api_key
 )
 
 chat_history = [
